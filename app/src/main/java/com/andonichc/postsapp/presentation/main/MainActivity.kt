@@ -1,7 +1,8 @@
-package com.andonichc.postsapp
+package com.andonichc.postsapp.presentation.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.andonichc.postsapp.R
 
 class MainActivity : AppCompatActivity() {
 
