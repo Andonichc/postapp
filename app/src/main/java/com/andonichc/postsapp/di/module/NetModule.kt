@@ -1,5 +1,6 @@
 package com.andonichc.postsapp.di.module
 
+import com.andonichc.postsapp.BuildConfig
 import com.andonichc.postsapp.data.comments.CommentsNetworkService
 import com.andonichc.postsapp.data.posts.PostsNetworkService
 import com.andonichc.postsapp.data.users.UsersNetworkService
@@ -12,7 +13,6 @@ import javax.inject.Singleton
 
 @Module
 class NetModule {
-    private val BASE_URL = "https://api.unsplash.com/"
 
 
     @Provides
@@ -24,7 +24,7 @@ class NetModule {
     @Singleton
     fun providesRetrofit(httpClient: OkHttpClient): Retrofit =
             Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                    .baseUrl(BuildConfig.BASE_URL)
                     .client(httpClient)
                     .build()
 
