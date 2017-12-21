@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.andonichc.postsapp.PostApplication
 import javax.inject.Inject
 
-/**
- * Created by andoni on 19/12/2017.
- */
+
 abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePresenter {
 
     @Inject

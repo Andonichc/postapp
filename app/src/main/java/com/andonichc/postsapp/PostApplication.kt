@@ -1,18 +1,15 @@
 package com.andonichc.postsapp
 
 import android.app.Application
-import com.andonichc.postsapp.di.component.DaggerAppComponent
-import com.andonichc.postsapp.di.component.DaggerNetComponent
-import com.andonichc.postsapp.presentation.base.di.AppModule
-import com.andonichc.postsapp.presentation.base.di.NetModule
+import com.andonichc.postsapp.presentation.base.di.*
 
 
 class PostApplication : Application() {
-    val mAppComponent = DaggerAppComponent.builder()
+    val mAppComponent: AppComponent = DaggerAppComponent.builder()
             .appModule(AppModule(this))
             .build()
 
-    val mNetComponent = DaggerNetComponent.builder()
+    val mNetComponent: NetComponent = DaggerNetComponent.builder()
             .netModule(NetModule())
             .build()
 }
