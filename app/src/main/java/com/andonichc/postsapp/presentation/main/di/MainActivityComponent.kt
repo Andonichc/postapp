@@ -1,7 +1,8 @@
-package com.andonichc.postsapp.di.component
+package com.andonichc.postsapp.presentation.main.di
 
-import com.andonichc.postsapp.di.module.MainActivityModule
-import com.andonichc.postsapp.di.scope.ActivityScope
+import com.andonichc.postsapp.presentation.base.di.ActivityScope
+import com.andonichc.postsapp.presentation.base.di.AppComponent
+import com.andonichc.postsapp.presentation.base.di.NetComponent
 import com.andonichc.postsapp.presentation.main.MainActivity
 import dagger.Component
 

@@ -1,6 +1,6 @@
-package com.andonichc.postsapp.di.module
+package com.andonichc.postsapp.presentation.main.di
 
-import com.andonichc.postsapp.di.scope.ActivityScope
+import com.andonichc.postsapp.presentation.base.di.ActivityScope
 import com.andonichc.postsapp.presentation.main.MainPresenter
 import com.andonichc.postsapp.presentation.main.MainPresenterImpl
 import com.andonichc.postsapp.presentation.main.MainView

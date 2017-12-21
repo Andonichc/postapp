@@ -1,9 +1,8 @@
-package com.andonichc.postsapp.di.component
+package com.andonichc.postsapp.presentation.base.di
 
 import com.andonichc.postsapp.data.comments.CommentsNetworkService
 import com.andonichc.postsapp.data.posts.PostsNetworkService
 import com.andonichc.postsapp.data.users.UsersNetworkService
-import com.andonichc.postsapp.di.module.NetModule
 import dagger.Component
 import javax.inject.Singleton
 

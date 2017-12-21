@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.di.scope
+package com.andonichc.postsapp.presentation.base.di
 
 import java.lang.annotation.RetentionPolicy
 import javax.inject.Scope

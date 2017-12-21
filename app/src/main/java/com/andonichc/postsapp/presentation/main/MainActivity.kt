@@ -3,7 +3,7 @@ package com.andonichc.postsapp.presentation.main
 import android.os.Bundle
 import com.andonichc.postsapp.R
 import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
-import com.andonichc.postsapp.di.module.MainActivityModule
+import com.andonichc.postsapp.presentation.main.di.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 
 class MainActivity : BaseActivity<MainPresenter>(), MainView {

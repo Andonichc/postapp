@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.di.module
+package com.andonichc.postsapp.presentation.base.di
 
 import com.andonichc.postsapp.PostApplication
 import dagger.Module

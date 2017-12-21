@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.di.module
+package com.andonichc.postsapp.presentation.base.di
 
 import com.andonichc.postsapp.BuildConfig
 import com.andonichc.postsapp.data.comments.CommentsNetworkService

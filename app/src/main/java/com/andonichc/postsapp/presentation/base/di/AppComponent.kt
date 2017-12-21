@@ -1,6 +1,5 @@
-package com.andonichc.postsapp.di.component
+package com.andonichc.postsapp.presentation.base.di
 
-import com.andonichc.postsapp.di.module.AppModule
 import dagger.Component
 
 @Component(modules = arrayOf(AppModule::class))
