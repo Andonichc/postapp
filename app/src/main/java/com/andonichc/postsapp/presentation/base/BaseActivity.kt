@@ -16,6 +16,8 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
 
         setInjection()
 
+        setUpView()
+
         mPresenter.onCreate()
     }
 
@@ -32,6 +34,10 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
     override fun onDestroy() {
         super.onDestroy()
         mPresenter.onDestroy()
+    }
+
+    protected open fun setUpView() {
+
     }
 
     fun getApp(): PostApplication = application as PostApplication
