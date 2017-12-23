@@ -1,5 +1,6 @@
 package com.andonichc.postsapp.presentation.main
 
+import android.support.annotation.StringRes
 import android.support.v7.widget.LinearLayoutManager
 import com.andonichc.postsapp.R
 import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
@@ -7,6 +8,7 @@ import com.andonichc.postsapp.di.module.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.invisible
+import com.andonichc.postsapp.presentation.utils.ext.visible
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -37,7 +39,12 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
 
     override fun showErrorState() {
         list_main_activity.invisible()
+        showMessage(R.string.error_message)
+    }
 
+    override fun showEmptyState() {
+        list_main_activity.invisible()
+        showMessage(R.string.list_emtpy)
     }
 
     override fun showLoadingState() {
@@ -48,11 +55,16 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         refresh_main_activity.isRefreshing = false
     }
 
-    override fun setInjection() {
+    override fun setInjection() =
         DaggerMainActivityComponent.builder()
                 .appComponent(getApp().mAppComponent)
                 .mainActivityModule(MainActivityModule(this))
                 .build()
                 .inject(this)
-    }
+
+    private fun showMessage(@StringRes message: Int) =
+            message_text_main_activity.run {
+                visible()
+                setText(message)
+            }
 }

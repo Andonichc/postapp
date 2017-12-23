@@ -16,5 +16,14 @@
             tools:listitem="@layout/item_post" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <TextView
+        android:id="@+id/message_text_main_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:visibility="gone"
+        tools:text="Something went wrong :("/>
+
 </FrameLayout>
 
