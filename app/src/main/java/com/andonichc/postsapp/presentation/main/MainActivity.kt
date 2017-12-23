@@ -7,6 +7,7 @@ import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
 import com.andonichc.postsapp.di.module.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.utils.ext.gone
 import com.andonichc.postsapp.presentation.utils.ext.invisible
 import com.andonichc.postsapp.presentation.utils.ext.visible
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,6 +27,9 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
     }
 
     override fun showPosts(posts: List<PostPresentationModel>) {
+        list_main_activity.visible()
+        message_text_main_activity.gone()
+
         list_main_activity.adapter = object : MainListAdapter(posts) {
             override fun onClickPost(item: PostPresentationModel) {
                 mPresenter.onPostSelected(item)
