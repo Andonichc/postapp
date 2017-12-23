@@ -4,6 +4,9 @@ import com.andonichc.postsapp.PostApplication
 import com.andonichc.postsapp.data.posts.PostsRepository
 import com.andonichc.postsapp.data.posts.PostsRepositoryImpl
 import com.andonichc.postsapp.data.posts.network.PostsNetworkDataSource
+import com.andonichc.postsapp.data.users.UsersRepository
+import com.andonichc.postsapp.data.users.UsersRepositoryImpl
+import com.andonichc.postsapp.data.users.network.UsersNetworkDataSource
 import com.andonichc.postsapp.domain.Schedulers
 import dagger.Module
 import dagger.Provides
@@ -26,4 +29,9 @@ class AppModule(private val mApp: PostApplication) {
     @Singleton
     fun providesPostsRepository(networkDataSource: PostsNetworkDataSource): PostsRepository =
             PostsRepositoryImpl(networkDataSource)
+
+    @Provides
+    @Singleton
+    fun providesUsersRepository(networkDataSource: UsersNetworkDataSource): UsersRepository =
+            UsersRepositoryImpl(networkDataSource)
 }

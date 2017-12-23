@@ -34,6 +34,10 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
         //TODO: Detail must be shown called to the detailActivity yet to be implemented
     }
 
+    override fun showErrorState() {
+
+    }
+
     override fun setInjection() {
         DaggerMainActivityComponent.builder()
                 .appComponent(getApp().mAppComponent)

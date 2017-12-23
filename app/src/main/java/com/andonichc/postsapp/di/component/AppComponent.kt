@@ -1,6 +1,7 @@
 package com.andonichc.postsapp.di.component
 
 import com.andonichc.postsapp.data.posts.PostsRepository
+import com.andonichc.postsapp.data.users.UsersRepository
 import com.andonichc.postsapp.di.module.AppModule
 import com.andonichc.postsapp.di.module.NetModule
 import com.andonichc.postsapp.domain.Schedulers
@@ -13,4 +14,6 @@ interface AppComponent {
     fun providesSchedulers(): Schedulers
 
     fun providesPostsRepository(): PostsRepository
+
+    fun providesUsersRepository(): UsersRepository
 }
