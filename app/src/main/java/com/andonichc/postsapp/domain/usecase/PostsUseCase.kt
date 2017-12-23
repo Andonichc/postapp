@@ -27,6 +27,10 @@ class PostsUseCase
             : List<Pair<PostModel, UserModel>> {
         val outList: MutableList<Pair<PostModel, UserModel>> = mutableListOf()
 
+        //Although it already comes sorted, we cannot guarantee that this will be a constant.
+        // Therefore, just in case we sort the list of users first to do searches afterwards
+        users.sortedBy { it.id }
+
         posts.forEach { post ->
             val index = users.binarySearch { it.id - post.userId }
 
