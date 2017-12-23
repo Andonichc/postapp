@@ -16,7 +16,7 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
 
         setInjection()
 
-        //setUpView()
+        setUpView()
 
         mPresenter.onCreate()
     }
@@ -36,10 +36,6 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
         mPresenter.onDestroy()
     }
 
-    protected open fun setUpView() {
-
-    }
-
     /*
     This method may not have to be implemented by all views (but has sense in much cases),
     this way we're making it optional for each view to implement it
@@ -50,5 +46,7 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
 
     fun getApp(): PostApplication = application as PostApplication
 
-    abstract fun setInjection()
+    protected abstract fun setInjection()
+
+    protected abstract fun setUpView()
 }

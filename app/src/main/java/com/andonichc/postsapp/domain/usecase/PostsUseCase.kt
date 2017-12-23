@@ -25,7 +25,7 @@ class PostsUseCase
 
     private fun pairPostsWithUsers(posts: List<PostModel>, users: List<UserModel>)
             : List<Pair<PostModel, UserModel>> {
-        val outList: MutableList<Pair<PostModel, UserModel>> = Collections.emptyList()
+        val outList: MutableList<Pair<PostModel, UserModel>> = mutableListOf()
 
         posts.forEach {
             val index = users.binarySearch { it.id }.compareTo(it.userId)

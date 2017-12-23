@@ -14,7 +14,7 @@ abstract class MainListAdapter(private val items: List<PostPresentationModel>) :
         RecyclerView.Adapter<MainListAdapter.PostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder =
-            PostViewHolder(parent.inflate(R.layout.item_post))
+            PostViewHolder(parent.inflate(R.layout.item_post, false))
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) =
             holder.bind(items[position])
