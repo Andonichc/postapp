@@ -27,15 +27,15 @@ class PostsUseCase
             : List<Pair<PostModel, UserModel>> {
         val outList: MutableList<Pair<PostModel, UserModel>> = mutableListOf()
 
-        posts.forEach {
-            val index = users.binarySearch { it.id }.compareTo(it.userId)
+        posts.forEach { post ->
+            val index = users.binarySearch { it.id - post.userId }
 
             val user = if (index > -1)
                 users[index]
             else
                 UserModel(id = -1, name = "", userName = "", email = "")
 
-            outList.add(Pair(it, user))
+            outList.add(Pair(post, user))
         }
         return outList
     }
