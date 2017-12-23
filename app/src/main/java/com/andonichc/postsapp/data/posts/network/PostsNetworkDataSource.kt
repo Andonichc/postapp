@@ -7,7 +7,8 @@ import javax.inject.Inject
 
 
 class PostsNetworkDataSource
-@Inject constructor(private val postsNetworkService: PostsNetworkService, private val mapper: PostNetworkMapper)
+@Inject constructor(private val postsNetworkService: PostsNetworkService,
+                    private val mapper: PostNetworkMapper)
     : PostsRepository {
 
     override fun getPosts(): Single<List<PostModel>> =

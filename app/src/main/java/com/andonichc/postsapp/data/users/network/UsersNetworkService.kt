@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.data.users
+package com.andonichc.postsapp.data.users.network
 
 import io.reactivex.Single
 import retrofit2.http.GET

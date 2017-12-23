@@ -3,7 +3,7 @@ package com.andonichc.postsapp.di.module
 import com.andonichc.postsapp.BuildConfig
 import com.andonichc.postsapp.data.comments.CommentsNetworkService
 import com.andonichc.postsapp.data.posts.network.PostsNetworkService
-import com.andonichc.postsapp.data.users.UsersNetworkService
+import com.andonichc.postsapp.data.users.network.UsersNetworkService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

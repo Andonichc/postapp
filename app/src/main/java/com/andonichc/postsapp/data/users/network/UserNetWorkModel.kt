@@ -1,4 +1,5 @@
-package com.andonichc.postsapp.data.users
+package com.andonichc.postsapp.data.users.network
+
 
 data class UserNetWorkModel(val id: Int,
                             val name: String,
