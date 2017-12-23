@@ -13,4 +13,5 @@ interface MainView: BaseView {
 
 interface MainPresenter: BasePresenter {
     fun onPostSelected(post: PostPresentationModel)
+    fun onRefresh()
 }

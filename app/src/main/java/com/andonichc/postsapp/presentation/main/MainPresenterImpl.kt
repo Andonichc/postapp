@@ -19,12 +19,18 @@ class MainPresenterImpl constructor(view: MainView,
         view.showPost(post)
     }
 
+    override fun onRefresh() {
+        loadPosts()
+    }
+
     private fun loadPosts() {
         postsUseCase.execute()
+                .doOnSubscribe { view.showLoadingState() }
+                .doFinally { view.hideLoadingState() }
                 .map(mapper::map)
-                .subscribeBy (
+                .subscribeBy(
                         onSuccess = { posts ->
-                            when{
+                            when {
                                 posts.isEmpty() -> view.showEmptyState()
                                 else -> view.showPosts(posts)
                             }

@@ -44,6 +44,22 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
 
     }
 
+    /*
+    This method may not have to be implemented by all views (but has sense in much cases),
+    this way we're making it optional for each view to implement it
+     */
+    override fun showLoadingState() {
+
+    }
+
+    /*
+    This method may not have to be implemented by all views (but has sense in much cases),
+    this way we're making it optional for each view to implement it
+     */
+    override fun hideLoadingState() {
+
+    }
+
     fun getApp(): PostApplication = application as PostApplication
 
     protected abstract fun setInjection()
