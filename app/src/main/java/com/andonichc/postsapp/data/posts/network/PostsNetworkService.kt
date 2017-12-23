@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.data.posts
+package com.andonichc.postsapp.data.posts.network
 
 import io.reactivex.Single
 import retrofit2.http.GET

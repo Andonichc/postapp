@@ -1,8 +1,8 @@
-package com.andonichc.postsapp.presentation.base.di
+package com.andonichc.postsapp.di.module
 
 import com.andonichc.postsapp.BuildConfig
 import com.andonichc.postsapp.data.comments.CommentsNetworkService
-import com.andonichc.postsapp.data.posts.PostsNetworkService
+import com.andonichc.postsapp.data.posts.network.PostsNetworkService
 import com.andonichc.postsapp.data.users.UsersNetworkService
 import dagger.Module
 import dagger.Provides
@@ -13,7 +13,6 @@ import javax.inject.Singleton
 
 @Module
 class NetModule {
-
 
     @Provides
     fun providesOkHttpClient(): OkHttpClient =
@@ -27,7 +26,6 @@ class NetModule {
                     .baseUrl(BuildConfig.BASE_URL)
                     .client(httpClient)
                     .build()
-
 
     @Provides
     @Singleton

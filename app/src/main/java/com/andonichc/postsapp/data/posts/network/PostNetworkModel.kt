@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.data.posts
+package com.andonichc.postsapp.data.posts.network
 
 
 data class PostNetworkModel(val id: Int,

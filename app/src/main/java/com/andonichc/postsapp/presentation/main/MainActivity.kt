@@ -3,9 +3,9 @@ package com.andonichc.postsapp.presentation.main
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.andonichc.postsapp.R
-import com.andonichc.postsapp.presentation.main.di.MainActivityModule
+import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
+import com.andonichc.postsapp.di.module.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
-import com.andonichc.postsapp.presentation.main.di.DaggerMainActivityComponent
 import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,7 +37,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
     override fun setInjection() {
         DaggerMainActivityComponent.builder()
                 .appComponent(getApp().mAppComponent)
-                .netComponent(getApp().mNetComponent)
                 .mainActivityModule(MainActivityModule(this))
                 .build()
                 .inject(this)
