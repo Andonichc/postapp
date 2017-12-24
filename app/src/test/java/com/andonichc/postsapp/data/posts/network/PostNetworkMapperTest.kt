@@ -2,8 +2,6 @@ package com.andonichc.postsapp.data.posts.network
 
 import com.andonichc.postsapp.domain.model.PostModel
 import junit.framework.Assert.assertEquals
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 
 @Suppress("IllegalIdentifier")

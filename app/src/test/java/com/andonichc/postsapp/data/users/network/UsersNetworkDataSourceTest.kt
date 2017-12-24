@@ -1,10 +1,5 @@
 package com.andonichc.postsapp.data.users.network
 
-import com.andonichc.postsapp.data.posts.network.PostNetworkMapper
-import com.andonichc.postsapp.data.posts.network.PostNetworkModel
-import com.andonichc.postsapp.data.posts.network.PostsNetworkDataSource
-import com.andonichc.postsapp.data.posts.network.PostsNetworkService
-import com.andonichc.postsapp.domain.model.UserModel
 import io.reactivex.Single
 import org.junit.Test
 import org.mockito.Mockito
@@ -19,7 +14,7 @@ class UsersNetworkDataSourceTest {
     private val postsNetworkDataSource = UsersNetworkDataSource(networkService, mapper)
 
     @Test
-    fun `when getPosts mapper and service get called`() {
+    fun `when getUsers mapper and service get called`() {
         //Given
         val users = listOf(
                 UserNetWorkModel(id = 1, userName = "username", name = "name", email = "email@example.com"),
