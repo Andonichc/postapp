@@ -31,6 +31,7 @@ class PostsRepositoryImplTest {
         testObserver.awaitTerminalEvent()
 
         //Then
+        testObserver.assertNoErrors()
         verify(netDataSource).getPosts()
     }
 }

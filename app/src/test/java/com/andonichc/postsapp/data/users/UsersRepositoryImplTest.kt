@@ -32,6 +32,7 @@ class UsersRepositoryImplTest {
         testObserver.awaitTerminalEvent()
 
         //Then
+        testObserver.assertNoErrors()
         Mockito.verify(netDataSource).getUsers()
     }
 }

@@ -28,7 +28,7 @@ class PostsUseCase
         val outList: MutableList<Pair<PostModel, UserModel>> = mutableListOf()
 
         //Although it already comes sorted, we cannot guarantee that this will be a constant.
-        // Therefore, just in case we sort the list of users first to do searches afterwards
+        // Therefore, just in case, we sort the list of users first to do searches afterwards
         users.sortedBy { it.id }
 
         posts.forEach { post ->
