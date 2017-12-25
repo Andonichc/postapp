@@ -1,9 +1,12 @@
 package com.andonichc.postsapp.utils.ext
 
+import android.view.View
 import android.view.ViewGroup
-import com.andonichc.postsapp.presentation.utils.ext.setAllMargins
+import com.andonichc.postsapp.presentation.utils.ext.*
 import junit.framework.Assert.assertEquals
 import org.junit.Test
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.verify
 
 const val MARGIN_INT = 16
 const val MARGIN_FLOAT = 16F
@@ -37,5 +40,41 @@ class ViewExtTest {
         assertEquals(MARGIN_FLOAT.toInt(), params.rightMargin)
         assertEquals(MARGIN_FLOAT.toInt(), params.topMargin)
         assertEquals(MARGIN_FLOAT.toInt(), params.bottomMargin)
+    }
+
+    @Test
+    fun visible_calls_set_visibility() {
+        //Given
+        val view = mock(View::class.java)
+
+        //When
+        view.visible()
+
+        //Then
+        verify(view).visibility = View.VISIBLE
+    }
+
+    @Test
+    fun invisible_calls_set_visibility() {
+        //Given
+        val view = mock(View::class.java)
+
+        //When
+        view.invisible()
+
+        //Then
+        verify(view).visibility = View.INVISIBLE
+    }
+
+    @Test
+    fun gone_calls_set_visibility() {
+        //Given
+        val view = mock(View::class.java)
+
+        //When
+        view.gone()
+
+        //Then
+        verify(view).visibility = View.GONE
     }
 }
