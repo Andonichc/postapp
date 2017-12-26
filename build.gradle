@@ -7,6 +7,7 @@ buildscript {
         support_version = '27.0.2'
         retrofit_version = '2.3.0'
         mockito_version = '2.13.0'
+        espresso_version = '3.0.1'
     }
 
     repositories {

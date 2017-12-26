@@ -1,8 +1,7 @@
-package com.andonichc.postsapp.utils.ext
+package com.andonichc.postsapp.presentation.utils.ext
 
 import android.view.View
 import android.view.ViewGroup
-import com.andonichc.postsapp.presentation.utils.ext.*
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.mock
