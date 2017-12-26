@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:textSize="30sp"
         android:visibility="gone"
-        tools:text="Something went wrong :("/>
+        tools:text="Something went wrong :(" />
 
 </FrameLayout>
 
