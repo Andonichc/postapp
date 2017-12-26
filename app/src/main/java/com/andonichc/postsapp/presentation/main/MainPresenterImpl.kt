@@ -2,7 +2,7 @@ package com.andonichc.postsapp.presentation.main
 
 import com.andonichc.postsapp.domain.usecase.PostsUseCase
 import com.andonichc.postsapp.presentation.base.BasePresenterImpl
-import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import io.reactivex.rxkotlin.subscribeBy
 
 

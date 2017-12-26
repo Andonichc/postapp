@@ -7,6 +7,11 @@ class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailVi
     override fun setUpView() {
 
     }
+
+    override fun showPost() {
+
+    }
+
     override fun setInjection() {
 
     }

@@ -5,7 +5,7 @@ import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import com.andonichc.postsapp.R
-import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.checkVisibility
 import com.andonichc.postsapp.presentation.utils.ext.performClickOnRecyclerViewItem
 import org.junit.Before

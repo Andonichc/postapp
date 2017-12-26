@@ -6,7 +6,7 @@ import com.andonichc.postsapp.R
 import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
 import com.andonichc.postsapp.di.module.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
-import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.gone
 import com.andonichc.postsapp.presentation.utils.ext.invisible
 import com.andonichc.postsapp.presentation.utils.ext.visible

@@ -5,6 +5,7 @@ import com.andonichc.postsapp.presentation.base.BaseView
 
 
 interface PostDetailView: BaseView {
+    fun showPost()
 }
 
 interface PostDetailPresenter: BasePresenter {
