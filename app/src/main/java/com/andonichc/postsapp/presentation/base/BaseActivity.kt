@@ -1,20 +1,25 @@
 package com.andonichc.postsapp.presentation.base
 
 import android.os.Bundle
+import android.support.annotation.VisibleForTesting
 import android.support.v7.app.AppCompatActivity
 import com.andonichc.postsapp.PostApplication
+import java.lang.reflect.Modifier.PROTECTED
 import javax.inject.Inject
 
 
 abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePresenter {
 
     @Inject
-    protected lateinit var mPresenter: T
+    @VisibleForTesting(otherwise = PROTECTED)
+    lateinit var mPresenter: T
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setInjection()
+
+        setUpView()
 
         mPresenter.onCreate()
     }
@@ -34,7 +39,33 @@ abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePre
         mPresenter.onDestroy()
     }
 
+    /*
+    This method may not have to be implemented by all views (but has sense in much cases),
+    this way we're making it optional for each view to implement it
+     */
+    override fun showEmptyState() {
+
+    }
+
+    /*
+    This method may not have to be implemented by all views (but has sense in much cases),
+    this way we're making it optional for each view to implement it
+     */
+    override fun showLoadingState() {
+
+    }
+
+    /*
+    This method may not have to be implemented by all views (but has sense in much cases),
+    this way we're making it optional for each view to implement it
+     */
+    override fun hideLoadingState() {
+
+    }
+
     fun getApp(): PostApplication = application as PostApplication
 
-    abstract fun setInjection()
+    protected abstract fun setInjection()
+
+    protected abstract fun setUpView()
 }

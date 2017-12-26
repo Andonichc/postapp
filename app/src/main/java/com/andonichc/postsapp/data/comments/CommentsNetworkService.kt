@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface CommentsNetworkService {
     @GET("/comments")
-    fun getComments(): Single<List<CommentNetworkService>>
+    fun getComments(): Single<List<CommentNetworkModel>>
 }
