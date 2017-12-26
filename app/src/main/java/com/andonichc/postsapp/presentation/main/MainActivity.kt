@@ -60,11 +60,11 @@ class MainActivity : BaseActivity<MainPresenter>(), MainView {
     }
 
     override fun setInjection() =
-        DaggerMainActivityComponent.builder()
-                .appComponent(getApp().mAppComponent)
-                .mainActivityModule(MainActivityModule(this))
-                .build()
-                .inject(this)
+            DaggerMainActivityComponent.builder()
+                    .appComponent(getApp().mAppComponent)
+                    .mainActivityModule(MainActivityModule(this))
+                    .build()
+                    .inject(this)
 
     private fun showMessage(@StringRes message: Int) =
             message_text_main_activity.run {

@@ -7,7 +7,6 @@ import com.andonichc.postsapp.domain.model.PostModel
 import com.andonichc.postsapp.domain.model.UserModel
 import io.reactivex.Single
 import io.reactivex.rxkotlin.zipWith
-import java.util.*
 import javax.inject.Inject
 
 

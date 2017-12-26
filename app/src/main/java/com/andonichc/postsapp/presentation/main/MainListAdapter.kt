@@ -3,7 +3,6 @@ package com.andonichc.postsapp.presentation.main
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import com.andonichc.postsapp.R
 import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.inflate

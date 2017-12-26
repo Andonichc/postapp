@@ -22,7 +22,7 @@ fun ViewGroup.MarginLayoutParams.setAllMargins(marginInPx: Int) =
         this.setMargins(marginInPx, marginInPx, marginInPx, marginInPx)
 
 fun ViewGroup.MarginLayoutParams.setAllMargins(marginInPx: Float) =
-    this.setAllMargins(marginInPx.toInt())
+        this.setAllMargins(marginInPx.toInt())
 
 
 fun View.visible() {

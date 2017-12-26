@@ -49,7 +49,6 @@ class MainPresenterImplTest {
     }
 
 
-
     private fun testLoadPosts(method: () -> Unit) {
         //Given
         val pairedPostsUsers = listOf(mock(Pair::class.java)) as List<Pair<PostModel, UserModel>>
