@@ -1,4 +1,4 @@
-package com.andonichc.postsapp.data.comments
+package com.andonichc.postsapp.data.comments.network
 
 import io.reactivex.Single
 import retrofit2.http.GET
