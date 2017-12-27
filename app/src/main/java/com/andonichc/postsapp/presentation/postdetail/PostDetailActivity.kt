@@ -19,7 +19,6 @@ class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailVi
 
     private fun parsePostFromIntent(bundle: Bundle?) {
         val post: PostPresentationModel? = bundle?.getParcelable(POST)
-
         mPresenter.onPostParsed(post)
     }
 
@@ -27,12 +26,15 @@ class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailVi
         setContentView(R.layout.activity_post_detail)
     }
 
-    override fun showPost(postPresentationModel: PostPresentationModel) {
-
+    override fun showPost(post: PostPresentationModel) {
+        avatar_img_post_detail.load(post.avatarUrl)
+        title_post_detail.text = post.title
+        body_post_detail.text = post.body
+        username_post_detail.text = post.userName
     }
 
     override fun showCommentsCount(count: Int) {
-
+        comments_count_post_detail.text = count.toString()
     }
 
     override fun setInjection() {
@@ -40,7 +42,7 @@ class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailVi
     }
 
     override fun showErrorState() {
-
+        finish()
     }
 }
 

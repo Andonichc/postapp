@@ -6,7 +6,7 @@ import com.andonichc.postsapp.presentation.model.PostPresentationModel
 
 
 interface PostDetailView: BaseView {
-    fun showPost(postPresentationModel: PostPresentationModel)
+    fun showPost(post: PostPresentationModel)
     fun showCommentsCount(count: Int)
 }
 

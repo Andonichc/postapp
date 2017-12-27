@@ -9,33 +9,29 @@ data class PostPresentationModel(val id: Int,
                                  val body: String,
                                  val userName: String,
                                  val avatarUrl: String) : Parcelable {
-    constructor(parcel: Parcel) : this(
-            parcel.readInt(),
-            parcel.readString(),
-            parcel.readString(),
-            parcel.readString(),
-            parcel.readString())
+    constructor(source: Parcel) : this(
+            source.readInt(),
+            source.readString(),
+            source.readString(),
+            source.readString(),
+            source.readString()
+    )
 
+    override fun describeContents() = 0
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(id)
-        parcel.writeString(title)
-        parcel.writeString(body)
-        parcel.writeString(userName)
-        parcel.writeString(avatarUrl)
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+        writeInt(id)
+        writeString(title)
+        writeString(body)
+        writeString(userName)
+        writeString(avatarUrl)
     }
 
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<PostPresentationModel> {
-        override fun createFromParcel(parcel: Parcel): PostPresentationModel {
-            return PostPresentationModel(parcel)
-        }
-
-        override fun newArray(size: Int): Array<PostPresentationModel?> {
-            return arrayOfNulls(size)
+    companion object {
+        @JvmField
+        val CREATOR: Parcelable.Creator<PostPresentationModel> = object : Parcelable.Creator<PostPresentationModel> {
+            override fun createFromParcel(source: Parcel): PostPresentationModel = PostPresentationModel(source)
+            override fun newArray(size: Int): Array<PostPresentationModel?> = arrayOfNulls(size)
         }
     }
 }

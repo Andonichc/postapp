@@ -53,8 +53,18 @@ class MainPresenterImplTest {
         //Given
         val pairedPostsUsers = listOf(mock(Pair::class.java)) as List<Pair<PostModel, UserModel>>
         val presentationPosts = listOf(
-                PostPresentationModel(id = 1, title = "title", avatarUrl = "http://url.com/1"),
-                PostPresentationModel(id = 2, title = "title2", avatarUrl = "http://url.com/2")
+                PostPresentationModel(
+                        id = 1,
+                        title = "title",
+                        avatarUrl = "http://url.com/1",
+                        body = "body",
+                        userName = "userName"),
+                PostPresentationModel(
+                        id = 2,
+                        title = "title2",
+                        avatarUrl = "http://url.com/2",
+                        body = "body2",
+                        userName = "userName2")
         )
 
         val single = Single.just(pairedPostsUsers)
