@@ -9,6 +9,7 @@ import com.andonichc.postsapp.di.component.DaggerPostDetailActivityComponent
 import com.andonichc.postsapp.di.module.PostDetailActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.utils.ext.visible
 import kotlinx.android.synthetic.main.activity_post_detail.*
 
 private const val POST = "PostPresentationModel"
@@ -36,8 +37,13 @@ class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
     }
 
     override fun showCommentsCount(count: Int) {
-        comments_count_post_detail.text = count.toString()
+        comments_count_post_detail.run {
+            text = count.toString()
+            visible()
+        }
     }
+
+
 
     override fun setInjection() {
         DaggerPostDetailActivityComponent.builder()

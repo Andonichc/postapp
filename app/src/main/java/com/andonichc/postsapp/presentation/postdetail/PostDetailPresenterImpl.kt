@@ -27,11 +27,11 @@ constructor(view: PostDetailView,
 
     private fun loadCommentsCount() {
         getCommentsForPostUseCase.execute(mPost.id)
-                .doOnSubscribe { view.showLoadingState() }
-                .doFinally { view.hideLoadingState() }
                 .map(mapper::map)
-                .subscribeBy {
-
-                }
+                .subscribeBy (
+                        onSuccess = {
+                            view.showCommentsCount(it)
+                        }
+                )
     }
 }
