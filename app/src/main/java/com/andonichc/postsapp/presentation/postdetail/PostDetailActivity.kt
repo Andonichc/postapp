@@ -3,7 +3,6 @@ package com.andonichc.postsapp.presentation.postdetail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.andonichc.postsapp.R
 import com.andonichc.postsapp.di.component.DaggerPostDetailActivityComponent
 import com.andonichc.postsapp.di.module.PostDetailActivityModule
@@ -13,6 +12,7 @@ import com.andonichc.postsapp.presentation.utils.ext.visible
 import kotlinx.android.synthetic.main.activity_post_detail.*
 
 private const val POST = "PostPresentationModel"
+
 class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,6 @@ class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
             visible()
         }
     }
-
 
 
     override fun setInjection() {

@@ -28,7 +28,7 @@ constructor(view: PostDetailView,
     private fun loadCommentsCount() {
         getCommentsForPostUseCase.execute(mPost.id)
                 .map(mapper::map)
-                .subscribeBy (
+                .subscribeBy(
                         onSuccess = {
                             view.showCommentsCount(it)
                         }
