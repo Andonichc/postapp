@@ -10,7 +10,7 @@ import io.reactivex.rxkotlin.zipWith
 import javax.inject.Inject
 
 
-class PostsUseCase
+class GetPostsUseCase
 @Inject constructor(private val schedulers: Schedulers,
                     private val postsRepository: PostsRepository,
                     private val usersRepository: UsersRepository) {

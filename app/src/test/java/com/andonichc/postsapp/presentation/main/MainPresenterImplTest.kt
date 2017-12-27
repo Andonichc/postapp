@@ -2,7 +2,7 @@ package com.andonichc.postsapp.presentation.main
 
 import com.andonichc.postsapp.domain.model.PostModel
 import com.andonichc.postsapp.domain.model.UserModel
-import com.andonichc.postsapp.domain.usecase.PostsUseCase
+import com.andonichc.postsapp.domain.usecase.GetPostsUseCase
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -13,7 +13,7 @@ import org.mockito.Mockito.*
 class MainPresenterImplTest {
 
     private val view = mock(MainView::class.java)
-    private val useCase = mock(PostsUseCase::class.java)
+    private val useCase = mock(GetPostsUseCase::class.java)
     private val mapper = mock(PostPresentationMapper::class.java)
 
     private val presenter = MainPresenterImpl(view, useCase, mapper)

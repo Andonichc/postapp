@@ -37,9 +37,7 @@ abstract class MainListAdapter(private val items: List<PostPresentationModel>) :
         fun bind(item: PostPresentationModel) {
             itemView.run {
                 title_post_item.text = item.title
-                Glide.with(context)
-                        .load(item.avatarUrl)
-                        .into(avatar_img_post_item)
+                avatar_img_post_item.load(item.avatarUrl)
 
                 setOnClickListener { onClickPost(item) }
             }

@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         tools:context="com.andonichc.postsapp.presentation.postdetail.PostDetailActivity">
 
-        <ImageView
-            android:id="@+id/image_post_detail"
+        <com.andonichc.postsapp.presentation.view.GlideImageView
+            android:id="@+id/avatar_img_post_detail"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="8dp"
@@ -36,7 +36,7 @@
             android:maxLines="2"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_post_detail"
+            app:layout_constraintStart_toEndOf="@+id/avatar_img_post_detail"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_default="spread"
             tools:text="Post Title" />
@@ -52,9 +52,9 @@
             android:layout_marginStart="16dp"
             android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/image_post_detail"
+            app:layout_constraintBottom_toBottomOf="@+id/avatar_img_post_detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_post_detail"
+            app:layout_constraintStart_toEndOf="@+id/avatar_img_post_detail"
             app:layout_constraintWidth_default="spread"
             tools:text="Author" />
 
@@ -70,7 +70,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_post_detail"
+            app:layout_constraintTop_toBottomOf="@id/avatar_img_post_detail"
             tools:text="A description with a lot of words" />
 
         <TextView

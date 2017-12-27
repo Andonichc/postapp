@@ -7,7 +7,9 @@ import com.andonichc.postsapp.presentation.model.PostPresentationModel
 
 interface PostDetailView: BaseView {
     fun showPost(postPresentationModel: PostPresentationModel)
+    fun showCommentsCount(count: Int)
 }
 
 interface PostDetailPresenter: BasePresenter {
+    fun onPostParsed(post: PostPresentationModel?)
 }

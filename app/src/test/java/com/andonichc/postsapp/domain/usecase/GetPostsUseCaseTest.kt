@@ -14,12 +14,12 @@ import io.reactivex.schedulers.Schedulers as RxSchedulers
 
 
 @Suppress("IllegalIdentifier")
-class PostsUseCaseTest {
+class GetPostsUseCaseTest {
 
     private val postsRepository = mock(PostsRepository::class.java)
     private val usersRepository = mock(UsersRepository::class.java)
 
-    private val useCase = PostsUseCase(Schedulers(main = RxSchedulers.trampoline()),
+    private val useCase = GetPostsUseCase(Schedulers(main = RxSchedulers.trampoline()),
             postsRepository, usersRepository)
 
     @Test
