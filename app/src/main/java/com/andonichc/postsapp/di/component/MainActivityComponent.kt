@@ -1,8 +1,8 @@
 package com.andonichc.postsapp.di.component
 
 import com.andonichc.postsapp.di.ActivityScope
-import com.andonichc.postsapp.presentation.main.MainActivity
 import com.andonichc.postsapp.di.module.MainActivityModule
+import com.andonichc.postsapp.presentation.main.MainActivity
 import dagger.Component
 
 

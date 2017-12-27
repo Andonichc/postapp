@@ -4,13 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.andonichc.postsapp.R
+import com.andonichc.postsapp.di.component.DaggerPostDetailActivityComponent
+import com.andonichc.postsapp.di.module.PostDetailActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import kotlinx.android.synthetic.main.activity_post_detail.*
 
-private const val POST = "PostPresentationModel"
 
-class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailView {
+class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         parsePostFromIntent(savedInstanceState)
@@ -38,13 +39,19 @@ class PostDetailActivity : BaseActivity<PostDetailPresenterImpl>(), PostDetailVi
     }
 
     override fun setInjection() {
-
+        DaggerPostDetailActivityComponent.builder()
+                .appComponent(getApp().mAppComponent)
+                .postDetailActivityModule(PostDetailActivityModule(this))
+                .build()
+                .inject(this)
     }
 
     override fun showErrorState() {
         finish()
     }
 }
+
+private const val POST = "PostPresentationModel"
 
 fun createIntent(context: Context, postPresentationModel: PostPresentationModel): Intent {
     val intent = Intent(context, PostDetailActivity::class.java)
