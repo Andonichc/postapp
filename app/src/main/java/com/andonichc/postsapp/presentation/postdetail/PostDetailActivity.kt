@@ -3,6 +3,7 @@ package com.andonichc.postsapp.presentation.postdetail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import com.andonichc.postsapp.R
 import com.andonichc.postsapp.di.component.DaggerPostDetailActivityComponent
 import com.andonichc.postsapp.di.module.PostDetailActivityModule
@@ -10,16 +11,16 @@ import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import kotlinx.android.synthetic.main.activity_post_detail.*
 
-
+private const val POST = "PostPresentationModel"
 class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        parsePostFromIntent(savedInstanceState)
         super.onCreate(savedInstanceState)
+        parsePostFromIntent(intent.extras)
     }
 
-    private fun parsePostFromIntent(bundle: Bundle?) {
-        val post: PostPresentationModel? = bundle?.getParcelable(POST)
+    private fun parsePostFromIntent(bundle: Bundle) {
+        val post: PostPresentationModel? = bundle.getParcelable(POST)
         mPresenter.onPostParsed(post)
     }
 
@@ -49,14 +50,15 @@ class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
     override fun showErrorState() {
         finish()
     }
+
+    companion object {
+        fun createIntent(context: Context, postPresentationModel: PostPresentationModel): Intent {
+            val intent = Intent(context, PostDetailActivity::class.java)
+
+            intent.putExtra(POST, postPresentationModel)
+
+            return intent
+        }
+    }
 }
 
-private const val POST = "PostPresentationModel"
-
-fun createIntent(context: Context, postPresentationModel: PostPresentationModel): Intent {
-    val intent = Intent(context, PostDetailActivity::class.java)
-
-    intent.putExtra(POST, postPresentationModel)
-
-    return intent
-}

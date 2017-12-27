@@ -14,14 +14,12 @@ constructor(view: PostDetailView,
 
     private lateinit var mPost: PostPresentationModel
 
-    override fun onCreate() {
-        view.showPost(mPost)
-        loadCommentsCount()
-    }
-
     override fun onPostParsed(post: PostPresentationModel?) {
         if (post != null) {
             mPost = post
+
+            view.showPost(mPost)
+            loadCommentsCount()
         } else {
             view.showErrorState()
         }
