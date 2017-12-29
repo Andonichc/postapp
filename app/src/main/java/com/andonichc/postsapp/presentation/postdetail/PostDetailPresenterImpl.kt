@@ -15,13 +15,14 @@ constructor(view: PostDetailView,
     private lateinit var mPost: PostPresentationModel
 
     override fun onPostParsed(post: PostPresentationModel?) {
-        if (post != null) {
-            mPost = post
+        when {
+            post != null -> {
+                mPost = post
 
-            view.showPost(mPost)
-            loadCommentsCount()
-        } else {
-            view.showErrorState()
+                view.showPost(mPost)
+                loadCommentsCount()
+            }
+            else -> view.showErrorState()
         }
     }
 
@@ -31,7 +32,8 @@ constructor(view: PostDetailView,
                 .subscribeBy(
                         onSuccess = {
                             view.showCommentsCount(it)
-                        }
+                        },
+                        onError = {}
                 )
     }
 }

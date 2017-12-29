@@ -31,8 +31,18 @@ class MainActivityTest {
     fun onShowItems_with_items() {
         //Given
         val presentationPosts = listOf(
-                PostPresentationModel(id = 1, title = "title", avatarUrl = "http://url.com/1"),
-                PostPresentationModel(id = 2, title = "title2", avatarUrl = "http://url.com/2")
+                PostPresentationModel(
+                        id = 1,
+                        title = "title",
+                        avatarUrl = "http://url.com/1",
+                        body = "body",
+                        userName = "userName"),
+                PostPresentationModel(
+                        id = 2,
+                        title = "title2",
+                        avatarUrl = "http://url.com/2",
+                        body = "body2",
+                        userName = "userName2")
         )
 
         //When
@@ -98,8 +108,18 @@ class MainActivityTest {
     fun onClickListItem_onPostSelected_is_called() {
         //Given
         val presentationPosts = listOf(
-                PostPresentationModel(id = 1, title = "title", avatarUrl = "http://url.com/1"),
-                PostPresentationModel(id = 2, title = "title2", avatarUrl = "http://url.com/2")
+                PostPresentationModel(
+                        id = 1,
+                        title = "title",
+                        avatarUrl = "http://url.com/1",
+                        body = "body",
+                        userName = "userName"),
+                PostPresentationModel(
+                        id = 2,
+                        title = "title2",
+                        avatarUrl = "http://url.com/2",
+                        body = "body2",
+                        userName = "userName2")
         )
 
         //When
