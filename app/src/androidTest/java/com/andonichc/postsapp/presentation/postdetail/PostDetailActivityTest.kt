@@ -3,7 +3,6 @@ package com.andonichc.postsapp.presentation.postdetail
 import android.support.test.rule.ActivityTestRule
 import org.junit.Before
 import org.junit.Rule
-import org.junit.Test
 import org.mockito.Mockito.mock
 
 

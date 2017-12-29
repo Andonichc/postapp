@@ -45,11 +45,7 @@ class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
 
 
     override fun setInjection() {
-        DaggerPostDetailActivityComponent.builder()
-                .appComponent(getApp().mAppComponent)
-                .postDetailActivityModule(PostDetailActivityModule(this))
-                .build()
-                .inject(this)
+        getApp().mInjector.inject(this)
     }
 
     override fun showErrorState() {
