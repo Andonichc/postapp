@@ -11,6 +11,7 @@ import javax.inject.Inject
 abstract class BaseActivity<T> : AppCompatActivity(), BaseView where T : BasePresenter {
 
     @Inject
+    @VisibleForTesting(otherwise = PROTECTED)
     lateinit var mPresenter: T
 
     override fun onCreate(savedInstanceState: Bundle?) {

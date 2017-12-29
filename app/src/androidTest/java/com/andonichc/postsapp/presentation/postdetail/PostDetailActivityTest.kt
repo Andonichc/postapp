@@ -1,7 +1,6 @@
 package com.andonichc.postsapp.presentation.postdetail
 
 import android.support.test.rule.ActivityTestRule
-import org.junit.Before
 import org.junit.Rule
 import org.mockito.Mockito.mock
 
@@ -13,8 +12,4 @@ class PostDetailActivityTest {
     @get:Rule
     val postDetailActivityRule = ActivityTestRule(PostDetailActivity::class.java)
 
-    @Before
-    fun initTest() {
-        postDetailActivityRule.activity.mPresenter = postDetailPresenter
-    }
 }

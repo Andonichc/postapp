@@ -8,24 +8,18 @@ import com.andonichc.postsapp.R
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.checkVisibility
 import com.andonichc.postsapp.presentation.utils.ext.performClickOnRecyclerViewItem
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
 
 class MainActivityTest {
 
-    private val mainPresenter = mock(MainPresenter::class.java)
-
     @get:Rule
     val mainActivityRule = ActivityTestRule(MainActivity::class.java)
 
-    @Before
-    fun initTest() {
-        mainActivityRule.activity.mPresenter = mainPresenter
-    }
+    private val mainPresenter = lazy { mainActivityRule.activity.mPresenter }
+
 
     @Test
     fun onShowItems_with_items() {
@@ -129,7 +123,8 @@ class MainActivityTest {
 
         R.id.list_main_activity.performClickOnRecyclerViewItem(0)
         //Then
-        verify(mainPresenter).onPostSelected(presentationPosts[0])
+        verify(mainPresenter.value).onPostSelected(presentationPosts[0])
 
     }
+
 }
