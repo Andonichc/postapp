@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.andonichc.postsapp.R
-import com.andonichc.postsapp.di.component.DaggerPostDetailActivityComponent
-import com.andonichc.postsapp.di.module.PostDetailActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.visible

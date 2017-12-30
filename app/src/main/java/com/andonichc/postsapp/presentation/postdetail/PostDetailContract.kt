@@ -5,11 +5,11 @@ import com.andonichc.postsapp.presentation.base.BaseView
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 
 
-interface PostDetailView: BaseView {
+interface PostDetailView : BaseView {
     fun showPost(post: PostPresentationModel)
     fun showCommentsCount(count: Int)
 }
 
-interface PostDetailPresenter: BasePresenter {
+interface PostDetailPresenter : BasePresenter {
     fun onPostParsed(post: PostPresentationModel?)
 }

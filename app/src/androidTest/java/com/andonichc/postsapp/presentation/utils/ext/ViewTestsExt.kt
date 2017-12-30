@@ -6,7 +6,6 @@ import android.support.test.espresso.action.ViewActions
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.contrib.RecyclerViewActions
 import android.support.test.espresso.matcher.ViewMatchers
-import com.andonichc.postsapp.R
 import com.andonichc.postsapp.presentation.main.MainListAdapter
 
 

@@ -8,7 +8,6 @@ import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.inflate
 import com.andonichc.postsapp.presentation.utils.ext.setAllMargins
 import com.andonichc.postsapp.presentation.utils.ext.toDp
-import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_post.view.*
 
 
