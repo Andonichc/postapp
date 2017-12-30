@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PostsApp</string>
+    <string name="error_message">Something went wrong :(</string>
+    <string name="list_emtpy">There\'s no posts here!</string>
+    <string name="main_title">Posts</string>
+    <string name="post_detail_title">Post</string>
+    <string name="image_post_description">Avatar of the poster of the post</string>
 </resources>
