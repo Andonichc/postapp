@@ -2,8 +2,8 @@ package com.andonichc.postsapp.presentation.main
 
 import com.andonichc.postsapp.domain.model.PostModel
 import com.andonichc.postsapp.domain.model.UserModel
-import com.andonichc.postsapp.domain.usecase.PostsUseCase
-import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.domain.usecase.GetPostsUseCase
+import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import org.junit.Test
@@ -13,7 +13,7 @@ import org.mockito.Mockito.*
 class MainPresenterImplTest {
 
     private val view = mock(MainView::class.java)
-    private val useCase = mock(PostsUseCase::class.java)
+    private val useCase = mock(GetPostsUseCase::class.java)
     private val mapper = mock(PostPresentationMapper::class.java)
 
     private val presenter = MainPresenterImpl(view, useCase, mapper)
@@ -53,8 +53,18 @@ class MainPresenterImplTest {
         //Given
         val pairedPostsUsers = listOf(mock(Pair::class.java)) as List<Pair<PostModel, UserModel>>
         val presentationPosts = listOf(
-                PostPresentationModel(id = 1, title = "title", avatarUrl = "http://url.com/1"),
-                PostPresentationModel(id = 2, title = "title2", avatarUrl = "http://url.com/2")
+                PostPresentationModel(
+                        id = 1,
+                        title = "title",
+                        avatarUrl = "http://url.com/1",
+                        body = "body",
+                        userName = "userName"),
+                PostPresentationModel(
+                        id = 2,
+                        title = "title2",
+                        avatarUrl = "http://url.com/2",
+                        body = "body2",
+                        userName = "userName2")
         )
 
         val single = Single.just(pairedPostsUsers)

@@ -1,6 +1,9 @@
 package com.andonichc.postsapp.di.module
 
 import com.andonichc.postsapp.PostApplication
+import com.andonichc.postsapp.data.comments.CommentsRepository
+import com.andonichc.postsapp.data.comments.CommentsRepositoryImpl
+import com.andonichc.postsapp.data.comments.network.CommentsNetworkDataSource
 import com.andonichc.postsapp.data.posts.PostsRepository
 import com.andonichc.postsapp.data.posts.PostsRepositoryImpl
 import com.andonichc.postsapp.data.posts.network.PostsNetworkDataSource
@@ -34,4 +37,9 @@ class AppModule(private val mApp: PostApplication) {
     @Singleton
     fun providesUsersRepository(networkDataSource: UsersNetworkDataSource): UsersRepository =
             UsersRepositoryImpl(networkDataSource)
+
+    @Provides
+    @Singleton
+    fun providesCommentsRepository(networkDataSource: CommentsNetworkDataSource): CommentsRepository =
+            CommentsRepositoryImpl(networkDataSource)
 }

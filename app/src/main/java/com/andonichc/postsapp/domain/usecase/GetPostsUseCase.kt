@@ -10,7 +10,7 @@ import io.reactivex.rxkotlin.zipWith
 import javax.inject.Inject
 
 
-class PostsUseCase
+class GetPostsUseCase
 @Inject constructor(private val schedulers: Schedulers,
                     private val postsRepository: PostsRepository,
                     private val usersRepository: UsersRepository) {
@@ -28,13 +28,13 @@ class PostsUseCase
 
         //Although it already comes sorted, we cannot guarantee that this will be a constant.
         // Therefore, just in case, we sort the list of users first to do searches afterwards
-        users.sortedBy { it.id }
+        val usersSorted = users.sortedBy { it.id }
 
         posts.forEach { post ->
-            val index = users.binarySearch { it.id - post.userId }
+            val index = usersSorted.binarySearch { it.id - post.userId }
 
             val user = if (index > -1)
-                users[index]
+                usersSorted[index]
             else
                 UserModel(id = -1, name = "", userName = "", email = "")
 

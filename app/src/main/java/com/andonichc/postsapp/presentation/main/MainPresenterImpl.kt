@@ -1,13 +1,13 @@
 package com.andonichc.postsapp.presentation.main
 
-import com.andonichc.postsapp.domain.usecase.PostsUseCase
+import com.andonichc.postsapp.domain.usecase.GetPostsUseCase
 import com.andonichc.postsapp.presentation.base.BasePresenterImpl
-import com.andonichc.postsapp.presentation.main.model.PostPresentationModel
+import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import io.reactivex.rxkotlin.subscribeBy
 
 
 class MainPresenterImpl constructor(view: MainView,
-                                    private val postsUseCase: PostsUseCase,
+                                    private val getPostsUseCase: GetPostsUseCase,
                                     private val mapper: PostPresentationMapper)
     : BasePresenterImpl<MainView>(view), MainPresenter {
 
@@ -24,7 +24,7 @@ class MainPresenterImpl constructor(view: MainView,
     }
 
     private fun loadPosts() {
-        postsUseCase.execute()
+        getPostsUseCase.execute()
                 .doOnSubscribe { view.showLoadingState() }
                 .doFinally { view.hideLoadingState() }
                 .map(mapper::map)
