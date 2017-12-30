@@ -14,7 +14,7 @@ class GetCommentsForPostUseCaseTest {
 
     private val commentsRepository = mock(CommentsRepository::class.java)
 
-    private val useCase = GetCommentsForPostUseCase(Schedulers(main= RxSchedulers.trampoline()),
+    private val useCase = GetCommentsForPostUseCase(Schedulers(main = RxSchedulers.trampoline()),
             commentsRepository)
 
     @Test

@@ -22,6 +22,14 @@ class GetPostsUseCase
                     .subscribeOn(schedulers.io)
 
 
+    /**
+     * Pairs each PostModel whith its Usermodel doing a binarySearch for each post
+     *
+     * @param posts list of posts to be paired
+     * @param users list of users to be paired
+     *
+     * @return a list of Pairs with each PostModel and the UserModel to which it belongs to
+     */
     private fun pairPostsWithUsers(posts: List<PostModel>, users: List<UserModel>)
             : List<Pair<PostModel, UserModel>> {
         val outList: MutableList<Pair<PostModel, UserModel>> = mutableListOf()

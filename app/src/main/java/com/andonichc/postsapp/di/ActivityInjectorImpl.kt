@@ -8,7 +8,7 @@ import com.andonichc.postsapp.presentation.main.MainActivity
 import com.andonichc.postsapp.presentation.postdetail.PostDetailActivity
 
 
-class ActivityInjectorImpl: ActivityInjector {
+class ActivityInjectorImpl : ActivityInjector {
     override fun inject(activity: MainActivity) {
         DaggerMainActivityComponent.builder()
                 .appComponent(activity.getApp().mAppComponent)

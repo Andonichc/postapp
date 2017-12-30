@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class UsersRepositoryImpl
 @Inject constructor(private val networkDataSource: UsersNetworkDataSource)
-    :UsersRepository {
+    : UsersRepository {
     override fun getUsers(): Single<List<UserModel>> =
             networkDataSource.getUsers()
 }
