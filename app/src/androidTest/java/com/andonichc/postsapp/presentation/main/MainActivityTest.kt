@@ -5,25 +5,30 @@ import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import com.andonichc.postsapp.R
+import com.andonichc.postsapp.presentation.base.BaseActivity
+import com.andonichc.postsapp.presentation.base.BaseActivityTest
+import com.andonichc.postsapp.presentation.base.BasePresenter
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.utils.ext.checkVisibility
 import com.andonichc.postsapp.presentation.utils.ext.performClickOnRecyclerViewItem
+import com.andonichc.postsapp.presentation.utils.ext.textEquals
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mockito.verify
 
 
-class MainActivityTest {
+class MainActivityTest : BaseActivityTest() {
 
     @get:Rule
     val mainActivityRule = ActivityTestRule(MainActivity::class.java)
 
-    private val mainPresenter = lazy { mainActivityRule.activity.mPresenter }
-
+    override fun getRule(): ActivityTestRule<out BaseActivity<out BasePresenter>> = mainActivityRule
 
     @Test
     fun onShowItems_with_items() {
         //Given
+        val activity = mainActivityRule.activity
+
         val presentationPosts = listOf(
                 PostPresentationModel(
                         id = 1,
@@ -40,8 +45,8 @@ class MainActivityTest {
         )
 
         //When
-        mainActivityRule.activity.runOnUiThread {
-            mainActivityRule.activity.showPosts(presentationPosts)
+        activity.runOnUiThread {
+            activity.showPosts(presentationPosts)
         }
 
         //Then
@@ -58,11 +63,12 @@ class MainActivityTest {
     @Test
     fun onShowItems_with_empty_list() {
         //Given
+        val activity = mainActivityRule.activity
         val presentationPosts = emptyList<PostPresentationModel>()
 
         //When
-        mainActivityRule.activity.runOnUiThread {
-            mainActivityRule.activity.showPosts(presentationPosts)
+        activity.runOnUiThread {
+            activity.showPosts(presentationPosts)
         }
 
         //Then
@@ -72,35 +78,41 @@ class MainActivityTest {
 
     @Test
     fun onEmptyState_shows_empty_message() {
+        //Given
+        val activity = mainActivityRule.activity
+
         //When
-        mainActivityRule.activity.runOnUiThread {
-            mainActivityRule.activity.showEmptyState()
+        activity.runOnUiThread {
+            activity.showEmptyState()
         }
 
         //Then
         R.id.list_main_activity.checkVisibility(Visibility.INVISIBLE)
         R.id.message_text_main_activity.checkVisibility(Visibility.VISIBLE)
-        onView(withId(R.id.message_text_main_activity))
-                .check(ViewAssertions.matches(withText(R.string.list_emtpy)))
+        R.id.message_text_main_activity.textEquals(R.string.list_emtpy)
     }
 
     @Test
     fun onErrorState_shows_error_message() {
+        //Given
+        val activity = mainActivityRule.activity
+
         //When
-        mainActivityRule.activity.runOnUiThread {
-            mainActivityRule.activity.showErrorState()
+        activity.runOnUiThread {
+            activity.showErrorState()
         }
 
         //Then
         R.id.list_main_activity.checkVisibility(Visibility.INVISIBLE)
         R.id.message_text_main_activity.checkVisibility(Visibility.VISIBLE)
-        onView(withId(R.id.message_text_main_activity))
-                .check(ViewAssertions.matches(withText(R.string.error_message)))
+        R.id.message_text_main_activity.textEquals(R.string.error_message)
     }
 
     @Test
     fun onClickListItem_onPostSelected_is_called() {
         //Given
+        val activity = mainActivityRule.activity
+
         val presentationPosts = listOf(
                 PostPresentationModel(
                         id = 1,
@@ -117,13 +129,13 @@ class MainActivityTest {
         )
 
         //When
-        mainActivityRule.activity.runOnUiThread {
-            mainActivityRule.activity.showPosts(presentationPosts)
+        activity.runOnUiThread {
+            activity.showPosts(presentationPosts)
         }
 
         R.id.list_main_activity.performClickOnRecyclerViewItem(0)
         //Then
-        verify(mainPresenter.value).onPostSelected(presentationPosts[0])
+        verify(activity.mPresenter).onPostSelected(presentationPosts[0])
 
     }
 

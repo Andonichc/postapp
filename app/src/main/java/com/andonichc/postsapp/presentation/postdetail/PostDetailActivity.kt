@@ -20,8 +20,8 @@ class PostDetailActivity : BaseActivity<PostDetailPresenter>(), PostDetailView {
         parsePostFromIntent(intent.extras)
     }
 
-    private fun parsePostFromIntent(bundle: Bundle) {
-        val post: PostPresentationModel? = bundle.getParcelable(POST)
+    private fun parsePostFromIntent(bundle: Bundle?) {
+        val post: PostPresentationModel? = bundle?.getParcelable(POST)
         mPresenter.onPostParsed(post)
     }
 

@@ -3,8 +3,6 @@ package com.andonichc.postsapp.presentation.main
 import android.support.annotation.StringRes
 import android.support.v7.widget.LinearLayoutManager
 import com.andonichc.postsapp.R
-import com.andonichc.postsapp.di.component.DaggerMainActivityComponent
-import com.andonichc.postsapp.di.module.MainActivityModule
 import com.andonichc.postsapp.presentation.base.BaseActivity
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import com.andonichc.postsapp.presentation.postdetail.PostDetailActivity
