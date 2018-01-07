@@ -2,7 +2,7 @@ package com.andonichc.postsapp.domain.usecase
 
 import com.andonichc.postsapp.data.posts.PostsRepository
 import com.andonichc.postsapp.data.users.UsersRepository
-import com.andonichc.postsapp.domain.Schedulers
+import com.andonichc.postsapp.domain.AppSchedulers
 import com.andonichc.postsapp.domain.model.PostModel
 import com.andonichc.postsapp.domain.model.UserModel
 import com.andonichc.postsapp.domain.zipper.PostsUsersZipper
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 
 class GetPostsUseCase
-@Inject constructor(private val schedulers: Schedulers,
+@Inject constructor(private val schedulers: AppSchedulers,
                     private val postsRepository: PostsRepository,
                     private val usersRepository: UsersRepository,
                     private val postsUsersZipper: PostsUsersZipper) {

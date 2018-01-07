@@ -2,7 +2,7 @@ package com.andonichc.postsapp.domain.usecase
 
 import com.andonichc.postsapp.data.posts.PostsRepository
 import com.andonichc.postsapp.data.users.UsersRepository
-import com.andonichc.postsapp.domain.Schedulers
+import com.andonichc.postsapp.domain.AppSchedulers
 import com.andonichc.postsapp.domain.model.PostModel
 import com.andonichc.postsapp.domain.model.UserModel
 import io.reactivex.Single
@@ -10,7 +10,7 @@ import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
-import io.reactivex.schedulers.Schedulers as RxSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
 @Suppress("IllegalIdentifier")
@@ -19,7 +19,7 @@ class GetPostsUseCaseTest {
     private val postsRepository = mock(PostsRepository::class.java)
     private val usersRepository = mock(UsersRepository::class.java)
 
-    private val useCase = GetPostsUseCase(Schedulers(main = RxSchedulers.trampoline()),
+    private val useCase = GetPostsUseCase(AppSchedulers(main = Schedulers.trampoline()),
             postsRepository, usersRepository)
 
     @Test
