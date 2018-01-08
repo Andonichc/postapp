@@ -10,7 +10,7 @@ import com.andonichc.postsapp.data.posts.network.PostsNetworkDataSource
 import com.andonichc.postsapp.data.users.UsersRepository
 import com.andonichc.postsapp.data.users.UsersRepositoryImpl
 import com.andonichc.postsapp.data.users.network.UsersNetworkDataSource
-import com.andonichc.postsapp.domain.Schedulers
+import com.andonichc.postsapp.domain.AppSchedulers
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -25,8 +25,8 @@ class AppModule(private val mApp: PostApplication) {
 
     @Provides
     @Singleton
-    fun providesSchedulers(): Schedulers =
-            Schedulers()
+    fun providesSchedulers(): AppSchedulers =
+            AppSchedulers()
 
     @Provides
     @Singleton

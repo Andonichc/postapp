@@ -5,14 +5,14 @@ import com.andonichc.postsapp.data.posts.PostsRepository
 import com.andonichc.postsapp.data.users.UsersRepository
 import com.andonichc.postsapp.di.module.AppModule
 import com.andonichc.postsapp.di.module.NetModule
-import com.andonichc.postsapp.domain.Schedulers
+import com.andonichc.postsapp.domain.AppSchedulers
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = arrayOf(AppModule::class, NetModule::class))
 interface AppComponent {
-    fun providesSchedulers(): Schedulers
+    fun providesSchedulers(): AppSchedulers
 
     fun providesPostsRepository(): PostsRepository
 

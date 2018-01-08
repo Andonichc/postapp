@@ -1,20 +1,20 @@
 package com.andonichc.postsapp.domain.usecase
 
 import com.andonichc.postsapp.data.comments.CommentsRepository
-import com.andonichc.postsapp.domain.Schedulers
+import com.andonichc.postsapp.domain.AppSchedulers
 import com.andonichc.postsapp.domain.model.CommentModel
 import io.reactivex.Single
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.*
-import io.reactivex.schedulers.Schedulers as RxSchedulers
+import io.reactivex.schedulers.Schedulers
 
 @Suppress("IllegalIdentifier")
 class GetCommentsForPostUseCaseTest {
 
     private val commentsRepository = mock(CommentsRepository::class.java)
 
-    private val useCase = GetCommentsForPostUseCase(Schedulers(main = RxSchedulers.trampoline()),
+    private val useCase = GetCommentsForPostUseCase(AppSchedulers(main= Schedulers.trampoline()),
             commentsRepository)
 
     @Test
