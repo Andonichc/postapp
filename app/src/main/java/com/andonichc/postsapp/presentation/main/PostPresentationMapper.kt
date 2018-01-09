@@ -6,7 +6,7 @@ import com.andonichc.postsapp.domain.model.UserModel
 import com.andonichc.postsapp.presentation.model.PostPresentationModel
 import javax.inject.Inject
 
-
+const val AVATAR_BASE_URL = "https://api.adorable.io/avatars/285/"
 class PostPresentationMapper
 @Inject constructor()
     : ListMapper<Pair<PostModel, UserModel>, PostPresentationModel>() {
@@ -17,6 +17,6 @@ class PostPresentationMapper
                     title = from.first.title,
                     body = from.first.body,
                     userName = from.second.userName,
-                    avatarUrl = "https://api.adorable.io/avatars/285/${from.second.email}"
+                    avatarUrl = "$AVATAR_BASE_URL${from.second.email}"
             )
 }
